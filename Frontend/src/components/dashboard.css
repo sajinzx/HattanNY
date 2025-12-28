@@ -1,0 +1,186 @@
+/* ===== RESET & FULL SCREEN BASE ===== */
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== BODY LAYOUT ===== */
+body {
+  background: radial-gradient(circle at top, #111 0%, #000 70%);
+  color: #f5d27a;
+  font-family: "Segoe UI", system-ui, sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.dashboard-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px 24px;
+}
+
+/* ===== HEADERS ===== */
+.title {
+  text-align: center;
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  color: #f5d27a;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #c9a84f;
+  margin-bottom: 32px;
+}
+
+/* ===== SEARCH BAR ===== */
+.search {
+  display: block;
+  margin: 0 auto 24px;
+  width: 320px;
+  padding: 12px 14px;
+
+  background: #0f0f0f;
+  border: 1px solid #c9a84f;
+  border-radius: 8px;
+
+  color: #f5d27a;
+  font-size: 14px;
+  outline: none;
+}
+
+.search::placeholder {
+  color: #9b8840;
+}
+
+.search:focus {
+  border-color: #f5d27a;
+  box-shadow: 0 0 0 1px #f5d27a44;
+}
+
+/* ===== TABLE ===== */
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #0f0f0f;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* ===== TABLE HEADER ===== */
+.dashboard-table thead {
+  background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+}
+
+.dashboard-table th {
+  padding: 14px 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #f5d27a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ===== TABLE BODY ===== */
+.dashboard-table td {
+  padding: 12px 10px;
+  font-size: 14px;
+  color: #e8d68a;
+  border-bottom: 1px solid #222;
+  text-align: center;
+}
+
+.dashboard-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.dashboard-table tbody tr:hover {
+  background: #161616;
+}
+
+/* ===== EMPTY STATE ===== */
+.empty {
+  padding: 40px;
+  font-style: italic;
+  color: #c9a84f;
+}
+
+/* ===== STATUS COLORS ===== */
+.status {
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.status.paid {
+  color: #2ecc71;
+}
+
+.status.advance {
+  color: #f1c40f;
+}
+
+.status.pending {
+  color: #e74c3c;
+}
+
+/* ===== BUTTONS ===== */
+.edit-btn,
+.save-btn {
+  background: linear-gradient(135deg, #c9a84f, #f5d27a);
+  color: #000;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.edit-btn:hover,
+.save-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(245, 210, 122, 0.25);
+}
+
+/* ===== INPUTS (FOR FUTURE EDIT MODE) ===== */
+input[type="number"] {
+  width: 80px;
+  padding: 6px;
+
+  background: #000;
+  border: 1px solid #c9a84f;
+  border-radius: 6px;
+
+  color: #f5d27a;
+  text-align: center;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 24px 12px;
+  }
+
+  .dashboard-table th,
+  .dashboard-table td {
+    padding: 10px 6px;
+    font-size: 12px;
+  }
+
+  .search {
+    width: 100%;
+  }
+}
